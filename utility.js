@@ -23,3 +23,16 @@ var user2 = {
     phone: "01012341234"
 };
 console.log(user2.phone);
+/*
+type ReadonlyUser = {
+    readonly name?: string;
+    readonly age?: number;
+    readonly phone: number;
+}
+*/
+var user3 = {
+    name: '홍길동',
+    age: 22,
+    phone: 111,
+};
+//  user3.age = 11; // ERROR !!

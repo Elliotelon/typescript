@@ -51,3 +51,32 @@ interface User2 {
 }
 
 console.log(user2.phone)
+
+// type Readonly<T> = {
+//     readonly [P in keyof T]: T[P];
+// };
+
+
+interface User3 {
+    name?: string;
+    age?: number;
+    phone: number;
+ }
+ 
+ type ReadonlyUser = Readonly<User3>; // 인터페이스 User의 속성을 모두 readonly 설정
+ /*
+ type ReadonlyUser = {
+     readonly name?: string;
+     readonly age?: number;
+     readonly phone: number;
+ }
+ */
+ 
+ const user3: Readonly<User3> = {
+    name: '홍길동',
+    age: 22,
+    phone: 111,
+ };
+ 
+//  user3.age = 11; // ERROR !!
+
