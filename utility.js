@@ -35,4 +35,15 @@ var user3 = {
     age: 22,
     phone: 111,
 };
-//  user3.age = 11; // ERROR !!
+/*
+type RecordUser = {
+    name: number;
+    age: number;
+    phone: number;
+}
+*/
+var user4 = {
+    name: 9999,
+    age: 22,
+    phone: 111,
+};

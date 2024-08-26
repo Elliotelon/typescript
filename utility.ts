@@ -80,3 +80,25 @@ interface User3 {
  
 //  user3.age = 11; // ERROR !!
 
+// type Record<K extends keyof any, T> = {
+//     [P in K]: T;
+// };
+
+type Key = 'name' | 'age' | 'phone';
+
+type RecordUser = Record<Key, number>; // 유니온 Key의 'name', 'age', 'phone' 타입들을 속성으로 하여 number 타입으로 설정
+/*
+type RecordUser = {
+    name: number;
+    age: number;
+    phone: number;
+}
+*/
+
+const user4: Record<Key, number> = {
+   name: 9999,
+   age: 22,
+   phone: 111,
+};
+
+
