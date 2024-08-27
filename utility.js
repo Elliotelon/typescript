@@ -47,3 +47,13 @@ var user4 = {
     age: 22,
     phone: 111,
 };
+/*
+type PickUser = {
+    name: string;
+    email: string;
+}
+*/
+var user5 = {
+    name: 'kim',
+    email: 'kim@naver.com',
+};

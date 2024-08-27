@@ -101,4 +101,31 @@ const user4: Record<Key, number> = {
    phone: 111,
 };
 
+// type Pick<T, K extends keyof T> = { // 핵심은 제네릭 T 와 K의 관계를 extends로 먼저 조건을 명시해주어야 한다.
+//     [P in K]: T[P];
+// };
+
+interface User {
+    name: string;
+    age: number;
+    email: string;
+    isValid: boolean;
+ }
+ 
+ type Key2 = 'name' | 'email';
+ 
+ type PickUser = Pick<User, Key2>; // User 인터페이스의 속성에서 'name', 'email' 만 선택
+ /*
+ type PickUser = {
+     name: string;
+     email: string;
+ }
+ */
+ 
+ const user5: Pick<User, Key2> = {
+    name: 'kim',
+    email: 'kim@naver.com',
+ };
+
+
 
