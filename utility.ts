@@ -128,4 +128,25 @@ interface User {
  };
 
 
+//  type Exclude<T, U> = T extends U ? never : T;
+
+type Type = string | number | object;
+
+type Exclude_Type = Exclude<Type, number>; // 유니온 Type의 string | number | object 에서 number을 제외
+/*
+type Exclude_Type = string | object
+*/
+
+const a: Exclude<Type, number> = 'string';
+const b: Exclude<Type, number> = { name: '홍길동' };
+
+const c: Exclude<Type, object> = 'string';
+const d: Exclude<Type, object> = 123123;
+
+type T0 = Exclude<("a" | "b" | "c"), ("a")>;  // "b" | "c"
+type T1 = Exclude<("a" | "b" | "c"), ("a" | "b")>;  // "c"
+type T2 = Exclude<string | number | (() => void), Function>;  // string | number
+
+
+
 

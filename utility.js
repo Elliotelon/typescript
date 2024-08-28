@@ -57,3 +57,10 @@ var user5 = {
     name: 'kim',
     email: 'kim@naver.com',
 };
+/*
+type Exclude_Type = string | object
+*/
+var a = 'string';
+var b = { name: '홍길동' };
+var c = 'string';
+var d = 123123;
