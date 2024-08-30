@@ -147,6 +147,15 @@ type T0 = Exclude<("a" | "b" | "c"), ("a")>;  // "b" | "c"
 type T1 = Exclude<("a" | "b" | "c"), ("a" | "b")>;  // "c"
 type T2 = Exclude<string | number | (() => void), Function>;  // string | number
 
+// type Extract<T, U> = T extends U ? T : never;
 
+type Type1 = string | number | object | null;
+type Type2 = number | boolean;
 
+type Extract_Type = Extract<Type1, Type2>; // 유니온 Type1에서 유니온 Type2 와 일치하는 타입 number만 추출
+/*
+type Extract_Type = number
+*/
+
+const num: Extract<Type1, Type2> = 123123;
 

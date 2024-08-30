@@ -64,3 +64,7 @@ var a = 'string';
 var b = { name: '홍길동' };
 var c = 'string';
 var d = 123123;
+/*
+type Extract_Type = number
+*/
+var num = 123123;
