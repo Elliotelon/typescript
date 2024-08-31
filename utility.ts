@@ -105,7 +105,7 @@ const user4: Record<Key, number> = {
 //     [P in K]: T[P];
 // };
 
-interface User {
+interface User5 {
     name: string;
     age: number;
     email: string;
@@ -114,7 +114,7 @@ interface User {
  
  type Key2 = 'name' | 'email';
  
- type PickUser = Pick<User, Key2>; // User 인터페이스의 속성에서 'name', 'email' 만 선택
+ type PickUser = Pick<User5, Key2>; // User 인터페이스의 속성에서 'name', 'email' 만 선택
  /*
  type PickUser = {
      name: string;
@@ -122,7 +122,7 @@ interface User {
  }
  */
  
- const user5: Pick<User, Key2> = {
+ const user5: Pick<User5, Key2> = {
     name: 'kim',
     email: 'kim@naver.com',
  };
@@ -159,3 +159,29 @@ type Extract_Type = number
 
 const num: Extract<Type1, Type2> = 123123;
 
+// Pick 유틸리티 타입과 Exclude 유틸리티 타입을 응용해서 조합한 버전이라 할 수 있다
+// 즉, 해당 Type을 Exclude한 나머지 타입들을 Pick
+// extends keyof any 라는 뜻은 오로지 타입만 받게 하도록 설정
+// type Omit<T, K extends keyof any> = Pick<T, Exclude<keyof T, K>>;
+
+interface User6 {
+    name: string;
+    age: number;
+    email: string;
+    isValid: boolean;
+ }
+ 
+ type Key3 = 'name' | 'email';
+ 
+ type OmitUser = Omit<User6, Key3>; // User 인터페이스의 속성에서 'name', 'email' 제외
+ /*
+ type OmitUser = {
+     age: number;
+     isValid: boolean;
+ }
+ */
+ 
+ const user6: Omit<User6, Key3> = {
+    age: 44,
+    isValid: true,
+ };

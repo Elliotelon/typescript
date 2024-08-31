@@ -68,3 +68,13 @@ var d = 123123;
 type Extract_Type = number
 */
 var num = 123123;
+/*
+type OmitUser = {
+    age: number;
+    isValid: boolean;
+}
+*/
+var user6 = {
+    age: 44,
+    isValid: true,
+};
