@@ -185,3 +185,18 @@ interface User6 {
     age: 44,
     isValid: true,
  };
+
+//  type NonNullable<T> = T extends null | undefined ? never : T;
+
+type Type3 = string | number | object | null;
+type Type4 = number | undefined;
+
+type NonNullableType3 = NonNullable<Type3>; // 유니온 Type3에서 null 이나 undefined 를 제외
+/*
+type NonNullableType3 = string | number | object
+*/
+
+type NonNullableType4 = NonNullable<Type4>; // 유니온 Type4에서 null 이나 undefined 를 제외
+/*
+type NonNullableType4 = number
+*/
