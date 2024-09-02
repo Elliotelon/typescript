@@ -200,3 +200,20 @@ type NonNullableType4 = NonNullable<Type4>; // 유니온 Type4에서 null 이나
 /*
 type NonNullableType4 = number
 */
+
+// ype Parameters<T extends (...args: any) => any> = T extends (...args: infer P) => any ? P : never;
+
+type Zip = { x: number; y: string; z: boolean };
+function zip(x: number, y: string, z: boolean): Zip {
+   return { x, y, z };
+}
+
+type ZipType = typeof zip
+// type ZipType = (x: number, y: string, z: boolean) => Zip
+
+type Params = Parameters<typeof zip>
+// type Params = [x: number, y: string, z: boolean]
+
+type Frist = Params[0] // number
+type Second = Params[0] // string
+type Third = Params[0] // boolean
