@@ -217,3 +217,16 @@ type Params = Parameters<typeof zip>
 type Frist = Params[0] // number
 type Second = Params[0] // string
 type Third = Params[0] // boolean
+
+// type ReturnType<T extends (...args: any) => any> = T extends (...args: any) => infer R ? R : any;
+
+function fn(str: string): number {
+    return +str;
+ }
+ 
+ type Type5 = ReturnType<typeof fn>; // 함수의 리턴 타입을 반환
+ /*
+ type Type = number
+ */
+ 
+ const num3: ReturnType<typeof fn> = 1234;
